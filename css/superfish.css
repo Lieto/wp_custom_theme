@@ -1,0 +1,192 @@
+nav {
+    position:relative;
+    float: right;
+    margin-top: 38px;
+    margin-bottom: 35px;
+    margin-right: -10px;
+}
+
+.sf-menu { }
+.sf-menu ul {position:absolute;top:-999px; display:none;/* left offset of submenus need to match (see below) */}
+.sf-menu li {
+    position:relative;
+}
+.sf-menu > li {float: left; }
+.sf-menu a {
+    text-decoration: none;
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    color: #fff;
+}
+.sf-menu a:hover {text-decoration: none;}
+
+/*================================>> 1 Level <<========================================*/
+
+.sf-menu > li > a {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 38px;
+    position: relative;
+    vertical-align: middle;
+    padding: 6px 10px 8px;
+    z-index: 1000;
+    text-transform: uppercase;
+}
+
+.sf-menu > li {
+    display: block;
+    position: relative;
+    margin-left: 0px;
+}
+
+.sf-menu > li > a:hover,
+.sf-menu > li.current > a,
+.sf-menu > li.sfHover > a {
+    color: #fff;
+    background: #f05984;
+}
+.sf-menu > li:hover,
+.sf-menu > li.current,
+.sf-menu > li.sfHover {	}
+
+.sf-menu > li > a:hover > span,
+.sf-menu > li.current > a > span,
+.sf-menu > li.sfHover > a > span {
+    border-color: #f7941d transparent transparent transparent;
+
+}
+
+.sf-menu > li > a.sf-with-ul:after {
+    right: 50%;
+    top: 34px;
+    margin-right: -4px;
+    position: absolute;
+    content: "\f107";
+    color: #fff;
+    font-size: 10px;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.sf-menu > li > a.sf-with-ul:hover:after,
+.sf-menu > li.current > a:after,
+.sf-menu > li.sfHover > a:after { color: #fff;}
+
+/*================================>> 2 Level <<========================================*/
+
+.sf-menu > li > ul,
+.sf-menu > li.sfHover > ul {
+    left: -1px;
+    top: 52px;
+    width: 200px;
+    z-index:99;
+    text-align: left;
+}
+
+.sf-menu > li > ul > li:first-child {border-top: none;}
+.sf-menu > li > ul > li {
+    border-top: 1px solid #4e4d4e;
+    background: #232324;
+}
+
+.sf-menu > li > ul > li > a {
+    display: inline-block;
+    font-size: 13px;
+    padding-left: 8px;
+    line-height: 35px;
+}
+.sf-menu li li:hover,
+.sf-menu li.sfHover li.sfHover,
+.sf-menu li li:hover,
+.sf-menu li.sfHover li.sfHover {
+    background: #303030;
+}
+.sf-menu li li a:hover,
+.sf-menu li.sfHover li.sfHover>a,
+.sf-menu li li:hover span,
+.sf-menu li.sfHover li.sfHover span {
+    text-decoration: none;
+    color: #f05a85;
+}
+/*.sf-menu li li:hover, */
+.sf-menu li.sfHover li.sfHover { }
+.sf-menu li.sfHover span { }
+
+.sf-menu > li > ul > li > a.sf-with-ul:after {
+    right: 21px;
+    margin-right: -8px;
+    top: 12px;
+    position: absolute;
+    content: "\f107";
+    color: #fff;
+    font-size: 14px;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*================================>> 3 Level <<========================================*/
+
+.sf-menu li li ul {
+    left: 0px;
+    top: 0px;
+    z-index:99;
+    position: relative;
+}
+/*.sf-menu li li li:first-child {border-top: none;}*/
+.sf-menu li li li {
+    padding-left: 35px;
+    border-top: 1px solid #4e4d4e;
+    background: #232324;
+}
+.sf-menu li li li a {
+    display: inline;
+    font-size: 13px;
+    line-height: 35px;
+}
+.sf-menu li li li:hover { background: #303030;}
+
+
+/*==================================RESPONSIVE LAYOUTS===============================================*/
+
+@media only screen and (max-width: 995px) {
+    .sf-menu { margin-right: 0; display: inline-block;}
+    /*.sf-menu > li > a { padding-left: 6px; padding-right: 6px;}*/
+    nav { float: none; width: 100%; margin-top: 30px; text-align: center;}
+}
+
+@media only screen and (max-width: 767px) {
+    .sf-menu { display:none; }
+
+    nav select {
+        height: 32px;
+        border: 1px solid #f15b86;
+        font-size: 14px;
+        line-height: 24px;
+        color: #fff;
+        background-color: #f15b86;
+        width:100%;
+        outline: none;
+        padding: 4px 0px 4px;
+        font-weight: normal;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    nav select option:first-child {
+        color:#ffffff;
+    }
+    header nav { float: none; margin-top: 30px;}
+}
+
+@media only screen and (max-width: 479px) {
+
+}
